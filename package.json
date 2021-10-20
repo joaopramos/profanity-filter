@@ -1,0 +1,15 @@
+{
+  "name": "profanity-filter",
+  "version": "1.0.0",
+  "description": "joao test for HeapsGo 2021",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Joao Ramos",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
