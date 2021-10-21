@@ -6,11 +6,15 @@ function fillCensoredWord(nChars) {
     .join("");
 }
 
-function profanityFilter(swearwords, originalTweet) {
+function profanityFilter(text) {
+  const firstLine = text.match(/^.*\n/)[0];
+  const swearwords = firstLine.trim().split(" ");
+  const tweet = text.substring(firstLine.length);
+
   return swearwords.reduce((censored, swearword) => {
     const regex = new RegExp(String.raw`\b${swearword}\b`, "ig");
     return censored.replace(regex, fillCensoredWord(swearword.length));
-  }, originalTweet);
+  }, tweet);
 }
 
 module.exports = profanityFilter;
